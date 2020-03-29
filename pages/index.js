@@ -35,21 +35,27 @@ const Home = ({ covid, chart }) => {
         <meta name="keywords" content="Keywords" />
         <title>Covid-19 Statistics</title>
 
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <link rel="manifest" href="/manifest.json" />
-        <link
-          href="/icon-72x72.png"
-          rel="icon"
-          type="image/png"
-          sizes="72x72"
-        />
-        <link
-          href="/icon-144x144.png"
-          rel="icon"
-          type="image/png"
-          sizes="144x144"
-        />
-        <link rel="apple-touch-icon" href="/icon-512x512.png"></link>
-        <meta name="theme-color" content="#317EFB" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       <Grid
         gap={3}

@@ -37,18 +37,18 @@ const Home = ({ covid, chart }) => {
 
         <link rel="manifest" href="/manifest.json" />
         <link
-          href="/favicon-16x16.png"
+          href="/icon-72x72.png"
           rel="icon"
           type="image/png"
-          sizes="16x16"
+          sizes="72x72"
         />
         <link
-          href="/favicon-32x32.png"
+          href="/icon-144x144.png"
           rel="icon"
           type="image/png"
-          sizes="32x32"
+          sizes="144x144"
         />
-        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+        <link rel="apple-touch-icon" href="/icon-512x512.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <Grid

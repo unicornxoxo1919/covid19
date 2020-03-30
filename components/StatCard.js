@@ -16,7 +16,7 @@ const StatCard = ({ statHeading, statNumber, statToday }) => {
       <Flex flexDirection="row" sx={{ justifyContent: "space-between" }}>
         <Heading>{statNumber}</Heading>
         <Badge sx={{ mt: "7px", mb: "7px", bg: "red" }}>
-          +{statToday} last 24hrs
+          +{statToday} today
         </Badge>
       </Flex>
       <Text>{statHeading}</Text>

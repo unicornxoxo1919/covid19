@@ -5,7 +5,7 @@
       "src": "^/service-worker.js$",
       "dest": "/_next/static/service-worker.js",
       "headers": {
-        "cache-control": "public, max-age=15",
+        "cache-control": "public, max-age=15 , stale-while-revalidate=300 ",
         "Service-Worker-Allowed": "/"
       }
     }

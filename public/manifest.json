@@ -1,7 +1,7 @@
 {
   "name": "Covid-19",
   "short_name": "Covid-19",
-  "theme_color": "#2196f3",
+  "theme_color": "white",
   "background_color": "white",
   "display": "standalone",
   "Scope": "/",
@@ -9,7 +9,7 @@
   "icons": [
     {
       "src": "/apple-touch-icon.png",
-      "sizes": "114x114",
+      "sizes": "512x512",
       "type": "image/png"
     },
     {

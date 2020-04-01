@@ -95,15 +95,20 @@ const Home = ({ covid, chart }) => {
         />
       </Grid>
       <Chart heading="Cases" data={ChartData} dataKey="Cases" />
-      <Chart heading="Deaths" data={ChartData} dataKey="Deaths" />
-      <Chart heading="Recoveries" data={ChartData} dataKey="Recovered" />
+      <Chart heading="Deaths" data={ChartData} dataKey="Deaths" margin={5} />
+      <Chart
+        heading="Recoveries"
+        data={ChartData}
+        dataKey="Recovered"
+        margin={5}
+      />
       <LastUpdated lastUpdated={humanDate} />
     </>
   ) : (
     <Box
       sx={{
         display: "flex",
-        height: "50vh",
+        height: "100vh",
         justifyContent: "center",
         alignItems: "center"
       }}

@@ -8,7 +8,7 @@ import {
   Tooltip
 } from "recharts";
 
-const Chart = ({ heading, data, dataKey, ...props }) => {
+const Chart = ({ heading, data, dataKey, margin }) => {
   return (
     <Box
       sx={{
@@ -16,9 +16,9 @@ const Chart = ({ heading, data, dataKey, ...props }) => {
         mx: "auto",
         bg: "muted",
         borderLeft: "4px solid",
-        boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
-        mt: 5
+        boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)"
       }}
+      marginTop={margin}
     >
       <Heading sx={{ p: 2, textAlign: "center", mb: 3, fontSize: [3, 4, 4] }}>
         {heading}

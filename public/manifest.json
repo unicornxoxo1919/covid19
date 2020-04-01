@@ -2,7 +2,7 @@
   "name": "Covid-19",
   "short_name": "Covid-19",
   "theme_color": "#2196f3",
-  "background_color": "tomato",
+  "background_color": "white",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",

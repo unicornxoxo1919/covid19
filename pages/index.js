@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer
-} from "recharts";
-import { Grid, Box, Spinner, Heading } from "theme-ui";
+import { Grid, Box, Spinner } from "theme-ui";
 import StatCard from "../components/StatCard";
 import fetch from "isomorphic-unfetch";
+import Chart from "../components/Chart";
+import LastUpdated from "../components/LastUpdated";
 
 const Home = ({ covid, chart }) => {
-  let array = chart;
-  array.splice(0, 18);
+  const unixTimeStamp = covid.updated;
+
+  const dateObject = new Date(unixTimeStamp);
+
+  const humanDate = dateObject.toLocaleString("en-MU", {
+    timeZone: "Indian/Mauritius",
+    timeZoneName: "short"
+  });
+
+  const ChartData = Object.keys(chart.timeline.cases).map(date => {
+    return {
+      date,
+      Cases: chart.timeline.cases[date],
+      Deaths: chart.timeline.deaths[date],
+      Recovered: chart.timeline.recovered[date]
+    };
+  });
+
+  ChartData.splice(0, 55);
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -78,53 +89,26 @@ const Home = ({ covid, chart }) => {
           statToday="0"
         />
         <StatCard
-          statHeading="Critical"
-          statNumber={covid.critical}
-          statToday="0"
+          statHeading="ActiveCases"
+          statNumber={covid.active}
+          statToday={covid.todayCases - covid.todayDeaths}
         />
       </Grid>
-      <Box
-        sx={{
-          maxWidth: ["350px", "700px", "1250px"],
-          mx: "auto",
-          bg: "muted",
-          p: 1,
-          borderLeft: "4px solid",
-          boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)"
-        }}
-      >
-        <Heading sx={{ p: 2, textAlign: "center" }}>Progression Curve</Heading>
-        <ResponsiveContainer width="90%" minHeight={300}>
-          <LineChart data={array}>
-            <Line
-              strokeWidth={3}
-              type="monotoneX"
-              dataKey="confirmed"
-              stroke="tomato"
-            />
-
-            <XAxis dataKey="date" stroke="tomato" strokeWidth={3} />
-            <YAxis strokeWidth={3} stroke="tomato" type="number" />
-            <Tooltip
-              itemStyle={{ color: "black" }}
-              wrapperStyle={{ color: "black" }}
-              contentStyle={{ color: "black" }}
-              labelStyle={{ color: "black" }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </Box>
+      <Chart heading="Cases" data={ChartData} dataKey="Cases" />
+      <Chart heading="Deaths" data={ChartData} dataKey="Deaths" />
+      <Chart heading="Recoveries" data={ChartData} dataKey="Recovered" />
+      <LastUpdated lastUpdated={humanDate} />
     </>
   ) : (
     <Box
       sx={{
         display: "flex",
-        height: "100vh",
+        height: "50vh",
         justifyContent: "center",
         alignItems: "center"
       }}
     >
-      <Spinner color="secondary" size={75} />
+      <Spinner color="secondary" />
     </Box>
   );
 };
@@ -132,11 +116,11 @@ const Home = ({ covid, chart }) => {
 Home.getInitialProps = async () => {
   const res = await fetch("https://corona.lmao.ninja/countries/Mauritius");
   const data = await res.json();
-  const res1 = await fetch("https://pomber.github.io/covid19/timeseries.json");
+  const res1 = await fetch("https://corona.lmao.ninja/v2/historical/Mauritius");
   const data2 = await res1.json();
   return {
     covid: data,
-    chart: data2["Mauritius"]
+    chart: data2
   };
 };
 

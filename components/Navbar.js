@@ -23,25 +23,11 @@ const Navbar = ({ ...props }) => {
       </div>
       <div sx={{ alignItems: "flex-end" }}>
         <NavLink
-          href="/symptoms"
           p={2}
-          sx={{ fontSize: [1, 3, 4], ":hover": { color: "secondary" } }}
-        >
-          Symptoms
-        </NavLink>
-        <NavLink
-          href="/stores"
-          p={2}
-          sx={{ fontSize: [1, 3, 4], ":hover": { color: "secondary" } }}
-        >
-          Stores
-        </NavLink>
-        <NavLink
-          p={1}
           ml={4}
           sx={{
             color: "text",
-            fontSize: [1, 3, 3],
+            fontSize: [1, 3, 4],
             ":active": { border: "3px solid #e7e7e7" }
           }}
           onClick={e => {

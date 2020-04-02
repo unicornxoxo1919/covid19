@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "target": " server",
   "routes": [
     {
       "src": "^/service-worker.js$",

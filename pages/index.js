@@ -107,7 +107,7 @@ const Home = ({ covid, chart }) => {
     <Box
       sx={{
         display: "flex",
-        height: "50vh",
+        height: "75vh",
         justifyContent: "center",
         alignItems: "center"
       }}

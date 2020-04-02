@@ -1,8 +1,12 @@
+import React, { useEffect, useState } from "react";
 import { Flex, NavLink, useColorMode } from "theme-ui";
+import { useMediaQuery } from "react-responsive";
 
 const Navbar = ({ ...props }) => {
   const [colorMode, setColorMode] = useColorMode();
-  console.log(colorMode);
+
+  const isMobile = useMediaQuery({ query: "(min-device-width:700px)" });
+
   return (
     <Flex
       as="nav"
@@ -14,12 +18,21 @@ const Navbar = ({ ...props }) => {
       }}
     >
       <div sx={{ alignItems: "flex-start" }}>
-        <NavLink
-          sx={{ p: 2, fontSize: [1, 3, 4], ":hover": { color: "secondary" } }}
-          href="/"
-        >
-          Covid-19
-        </NavLink>
+        {isMobile ? (
+          <NavLink
+            sx={{ p: 2, fontSize: [1, 3, 4], ":hover": { color: "secondary" } }}
+            href="/"
+          >
+            Covid-19
+          </NavLink>
+        ) : (
+          <NavLink
+            sx={{ p: 2, fontSize: [1, 3, 4], ":hover": { color: "secondary" } }}
+            href="/"
+          >
+            Refresh
+          </NavLink>
+        )}
       </div>
       <div sx={{ alignItems: "flex-end" }}>
         <NavLink

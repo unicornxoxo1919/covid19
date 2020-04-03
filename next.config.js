@@ -12,7 +12,7 @@ const nextConfig = {
           networkTimeoutSeconds: 15,
           expiration: {
             maxEntries: 150,
-            maxAgeSeconds: 300 // 1 month
+            maxAgeSeconds: 300 //
           },
           cacheableResponse: {
             statuses: [0, 200]

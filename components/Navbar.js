@@ -41,7 +41,8 @@ const Navbar = ({ ...props }) => {
           sx={{
             color: "text",
             fontSize: [1, 3, 4],
-            ":active": { border: "3px solid #e7e7e7" }
+            ":active": { border: "3px solid #e7e7e7" },
+            cursor: "pointer"
           }}
           onClick={e => {
             setColorMode(colorMode === "default" ? "dark" : "default");

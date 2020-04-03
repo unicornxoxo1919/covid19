@@ -12,7 +12,7 @@ class MyApp extends React.Component {
     logPageView();
   }
   render() {
-    this.props = { Component, pageProps };
+    const { Component, pageProps } = this.props;
     return (
       <ThemeProvider theme={theme}>
         <Navbar />

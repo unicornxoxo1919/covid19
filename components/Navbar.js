@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, NavLink, useColorMode } from "theme-ui";
 import { useMediaQuery } from "react-responsive";
-import { initGA, logPageView } from "../components/googleAnalytics";
+import { initGA, logPageView } from "./googleAnalytics";
 
 class Navbar extends React.Component {
   componentDidMount() {

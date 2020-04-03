@@ -3,13 +3,6 @@ import Navbar from "../components/Navbar";
 import { ThemeProvider } from "theme-ui";
 
 class MyApp extends React.Component {
-  componentDidMount() {
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true;
-    }
-    logPageView();
-  }
   render() {
     const { Component, pageProps } = this.props;
     return (

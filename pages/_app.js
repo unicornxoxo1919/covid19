@@ -1,7 +1,6 @@
 import theme from "../theme";
 import Navbar from "../components/Navbar";
 import { ThemeProvider } from "theme-ui";
-import { initGA, logPageView } from "../components/googleAnalytics";
 
 class MyApp extends React.Component {
   componentDidMount() {

@@ -5,7 +5,7 @@ import {
   Line,
   XAxis,
   YAxis,
-  Tooltip
+  Tooltip,
 } from "recharts";
 
 const Chart = ({ heading, data, dataKey, margin }) => {
@@ -16,7 +16,7 @@ const Chart = ({ heading, data, dataKey, margin }) => {
         mx: "auto",
         bg: "muted",
         borderLeft: "4px solid",
-        boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)"
+        boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
       }}
       marginTop={margin}
     >
@@ -27,7 +27,7 @@ const Chart = ({ heading, data, dataKey, margin }) => {
         <LineChart data={data}>
           <Line
             strokeWidth={3}
-            type="monotoneX"
+            type="monotone"
             dataKey={dataKey}
             stroke="#FF4136"
             dot={false}

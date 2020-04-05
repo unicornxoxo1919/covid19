@@ -13,19 +13,19 @@ const Home = ({ covid, chart }) => {
 
   const humanDate = dateObject.toLocaleString("en-MU", {
     timeZone: "Indian/Mauritius",
-    timeZoneName: "short"
+    timeZoneName: "short",
   });
 
-  const ChartData = Object.keys(chart.timeline.cases).map(date => {
+  const ChartData = Object.keys(chart.timeline.cases).map((date) => {
     return {
       date,
       Cases: chart.timeline.cases[date],
       Deaths: chart.timeline.deaths[date],
-      Recovered: chart.timeline.recovered[date]
+      Recovered: chart.timeline.recovered[date],
     };
   });
 
-  ChartData.splice(0, 55);
+  ChartData.splice(0, 5);
 
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -109,7 +109,7 @@ const Home = ({ covid, chart }) => {
         display: "flex",
         height: "75vh",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
       }}
     >
       <Spinner color="secondary" />
@@ -124,7 +124,7 @@ Home.getInitialProps = async () => {
   const data2 = await res1.json();
   return {
     covid: data,
-    chart: data2
+    chart: data2,
   };
 };
 

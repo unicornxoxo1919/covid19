@@ -8,7 +8,7 @@ const LastUpdated = ({ lastUpdated }) => {
         mx: "auto",
         textAlign: "center",
         maxWidth: ["350px", "700px", "1250px"],
-        p: 5
+        p: 5,
       }}
     >
       <Text sx={{ fontWeight: "bold", fontSize: [1, 2, 2] }}>
@@ -22,6 +22,12 @@ const LastUpdated = ({ lastUpdated }) => {
         sx={{ textDecoration: "none", color: "secondary", fontSize: [1, 2, 2] }}
       >
         API
+      </Link>
+      <Link
+        href="https://github.com/unicornxoxo1919/covid19"
+        sx={{ textDecoration: "none", color: "secondary", fontSize: [1, 2, 2] }}
+      >
+        GitHub
       </Link>
     </Box>
   );

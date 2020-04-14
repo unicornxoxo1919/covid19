@@ -25,8 +25,6 @@ const Home = ({ covid, chart }) => {
     };
   });
 
-  ChartData.splice(0, 5);
-
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {

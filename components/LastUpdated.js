@@ -18,12 +18,6 @@ const LastUpdated = ({ lastUpdated }) => {
         This is not a government of mauritius website
       </Text>
       <Link
-        href="https://github.com/novelcovid/api"
-        sx={{ textDecoration: "none", color: "secondary", fontSize: [1, 2, 2] }}
-      >
-        API
-      </Link>
-      <Link
         href="https://github.com/unicornxoxo1919/covid19"
         sx={{ textDecoration: "none", color: "secondary", fontSize: [1, 2, 2] }}
       >

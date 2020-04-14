@@ -27,16 +27,15 @@ const Chart = ({ heading, data, dataKey, margin }) => {
         <LineChart data={data}>
           <Line
             strokeWidth={3}
-            type="monotone"
+            type="linear"
             dataKey={dataKey}
-            stroke="#FF4136"
             dot={false}
             animationEasing="linear"
-            animationDuration={2500}
+            animationDuration={1000}
           />
 
-          <XAxis dataKey="date" stroke="#FF4136" strokeWidth={2} />
-          <YAxis strokeWidth={2} stroke="#FF4136" type="number" />
+          <XAxis dataKey="date" strokeWidth={2} />
+          <YAxis strokeWidth={2} type="number" />
           <Tooltip
             itemStyle={{ color: "black" }}
             wrapperStyle={{ color: "black" }}

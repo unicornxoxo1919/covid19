@@ -16,6 +16,9 @@ const Chart = ({ heading, data, dataKey, margin }) => {
         mx: "auto",
         bg: "muted",
         boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
+        ":hover": {
+          boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
+        },
       }}
       marginTop={margin}
     >

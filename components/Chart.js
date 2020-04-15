@@ -15,7 +15,6 @@ const Chart = ({ heading, data, dataKey, margin }) => {
         maxWidth: ["350px", "700px", "1250px"],
         mx: "auto",
         bg: "muted",
-        borderLeft: "4px solid",
         boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
       }}
       marginTop={margin}

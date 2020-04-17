@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import { Grid, Box, Spinner } from "theme-ui";
+import { Grid } from "theme-ui";
 import StatCard from "../components/StatCard";
 import fetch from "isomorphic-unfetch";
 import Chart from "../components/Chart";
@@ -25,13 +24,7 @@ const Home = ({ covid, chart }) => {
     };
   });
 
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  });
-  return !loading ? (
+  return (
     <>
       <Head>
         <meta charset="utf-8" />
@@ -101,17 +94,6 @@ const Home = ({ covid, chart }) => {
       />
       <LastUpdated lastUpdated={humanDate} />
     </>
-  ) : (
-    <Box
-      sx={{
-        display: "flex",
-        height: "75vh",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Spinner color="secondary" />
-    </Box>
   );
 };
 

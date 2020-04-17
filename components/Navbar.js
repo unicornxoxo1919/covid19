@@ -48,7 +48,7 @@ const Navbar = ({ ...props }) => {
             setColorMode(colorMode === "default" ? "dark" : "default");
           }}
         >
-          {colorMode === "default" ? "Night" : "Day"}
+          {colorMode === "default" ? "Deep" : "Swiss"}
         </NavLink>
       </div>
     </Flex>

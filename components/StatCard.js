@@ -7,7 +7,6 @@ const StatCard = ({ statHeading, statNumber, statToday }) => {
         display: "flex",
         flexDirection: "column",
         flex: "1",
-        borderLeft: "2px solid",
         boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
         p: 2,
         bg: "muted",

@@ -67,7 +67,7 @@ const Home = ({ covid, chart }) => {
       </Head>
       <Grid
         gap={3}
-        columns={[[1, 4], "1fr 1fr 1fr 1fr"]}
+        columns={[[1, 4], "1fr 1fr 1fr 1fr "]}
         sx={{ p: [4, 4, 6], pt: [4, 4, 5] }}
       >
         <StatCard
@@ -86,9 +86,9 @@ const Home = ({ covid, chart }) => {
           statToday="0"
         />
         <StatCard
-          statHeading="ActiveCases"
-          statNumber={covid.active}
-          statToday={covid.todayCases - covid.todayDeaths}
+          statHeading="Total Tests"
+          statNumber={covid.tests}
+          statToday="0"
         />
       </Grid>
       <Chart heading="Cases" data={ChartData} dataKey="Cases" />

@@ -116,7 +116,7 @@ const Home = ({ covid, chart }) => {
 };
 
 Home.getInitialProps = async () => {
-  const res = await fetch("https://corona.lmao.ninja/countries/Mauritius");
+  const res = await fetch("https://corona.lmao.ninja/v2/countries/Mauritius");
   const data = await res.json();
   const res1 = await fetch("https://corona.lmao.ninja/v2/historical/Mauritius");
   const data2 = await res1.json();

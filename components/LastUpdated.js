@@ -19,7 +19,13 @@ const LastUpdated = ({ lastUpdated }) => {
       </Text>
       <Link
         href="https://github.com/unicornxoxo1919/covid19"
-        sx={{ textDecoration: "none", color: "gray", fontSize: [1, 2, 2] }}
+        sx={{
+          textDecoration: "none",
+          fontWeight: "700",
+
+          color: "gray",
+          fontSize: [3, 3, 4],
+        }}
       >
         GitHub
       </Link>

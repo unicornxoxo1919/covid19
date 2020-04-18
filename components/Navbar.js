@@ -23,7 +23,7 @@ const Navbar = ({ ...props }) => {
             sx={{ p: 2, fontSize: [1, 3, 4], ":hover": { color: "secondary" } }}
             href="/"
           >
-            Covid-19
+            Mauritius Covid-19
           </NavLink>
         ) : (
           <NavLink

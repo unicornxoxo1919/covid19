@@ -6,7 +6,7 @@ import Chart from "../components/Chart";
 import LastUpdated from "../components/LastUpdated";
 import GA from "../components/GA";
 
-const Home = ({ covid, chart }) => {
+const Home = ({ covid, chart, stats }) => {
   const unixTimeStamp = covid.updated;
 
   const dateObject = new Date(unixTimeStamp);
@@ -78,12 +78,12 @@ const Home = ({ covid, chart }) => {
           <StatCard
             statHeading="Recovered"
             statNumber={covid.recovered}
-            statToday="0"
+            statToday={covid.recovered - stats.recovered}
           />
           <StatCard
             statHeading="Total Tests"
             statNumber={covid.tests}
-            statToday="0"
+            statToday={covid.tests - stats.tests}
           />
         </Grid>
         <Chart heading="Cases" data={ChartData} dataKey="Cases" />
@@ -103,11 +103,19 @@ const Home = ({ covid, chart }) => {
 Home.getInitialProps = async () => {
   const res = await fetch("https://corona.lmao.ninja/v2/countries/Mauritius");
   const data = await res.json();
-  const res1 = await fetch("https://corona.lmao.ninja/v2/historical/Mauritius");
+  const res1 = await fetch(
+    "https://corona.lmao.ninja/v2/historical/Mauritius?lastdays=37"
+  );
   const data2 = await res1.json();
+  const res2 = await fetch(
+    "https://corona.lmao.ninja/v2/countries/MUS?yesterday=true"
+  );
+  const data3 = await res2.json();
+
   return {
     covid: data,
     chart: data2,
+    stats: data3,
   };
 };
 

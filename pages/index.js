@@ -65,6 +65,7 @@ const Home = ({ covid, chart, stats }) => {
           columns={[[1, 4], "1fr 1fr 1fr 1fr "]}
           sx={{ p: [4, 4, 6], pt: [4, 4, 5] }}
         >
+
           <StatCard
             statHeading="Cases"
             statNumber={covid.cases}
@@ -104,7 +105,7 @@ Home.getInitialProps = async () => {
   const res = await fetch("https://corona.lmao.ninja/v2/countries/Mauritius");
   const data = await res.json();
   const res1 = await fetch(
-    "https://corona.lmao.ninja/v2/historical/Mauritius?lastdays=60"
+    "https://corona.lmao.ninja/v2/historical/Mauritius?lastdays=75"
   );
   const data2 = await res1.json();
   const res2 = await fetch(
